@@ -3,7 +3,7 @@ void main() {
   Conta contaMatheus = Conta("Matheus", 1000);
   Conta contaLuiza = Conta("Luiza", 2000);
   ContaCorrente contaChris = ContaCorrente("Chris", 4000);
-  ContaCorrente contaRoberta = ContaCorrente("Roberta", 3500);
+  ContaPoupanca contaRoberta = ContaPoupanca("Roberta", 4000);
 
   List<Conta> contas = <Conta>[contaMatheus, contaLuiza];
 
@@ -18,8 +18,10 @@ void main() {
   contaLuiza.enviar(200);
 
   contaRoberta.imprimeSoldo();
-  contaRoberta.enviar(500);
+  contaRoberta.enviar(4300);
 
   contaChris.imprimeSoldo();
-  contaChris.receber(700);
+  contaChris.enviar(4300);
+  contaRoberta.calcularRendimento();
+  contaRoberta.imprimeSoldo();
 }

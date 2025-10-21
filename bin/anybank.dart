@@ -1,3 +1,4 @@
+import '../lib/conta.dart';
 void main() {
   Conta contaMatheus = Conta("Matheus", 1000);
   Conta contaLuiza = Conta("Luiza", 2000);
@@ -5,17 +6,12 @@ void main() {
   List<Conta> contas = <Conta>[contaMatheus, contaLuiza];
 
   for (Conta conta in contas) {
-    print(conta.titular);
-    print(conta.soldo);
+    conta.imprimeSoldo();
   }
 
-  contaLuiza.soldo = 5000;
-  print(contaLuiza.soldo);
-}
+  contaLuiza.receber(3000);
 
-class Conta {
-  String titular;
-  double soldo;
+  contaMatheus.receber(500);
 
-  Conta(this.titular, this.soldo);
+  contaLuiza.enviar(200);
 }
